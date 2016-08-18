@@ -1,0 +1,19 @@
+﻿<h2>{{controller.employee.firstName}} {{controller.employee.lastName}}</h2>
+
+<form ng-show="controller.edit" ng-submit="controller.editEmployee()">
+    <input ng-model="controller.employee.firstName" />
+    <input ng-model="controller.employee.lastName" />
+    <input ng-model="controller.employee.email" />
+    <input ng-model="controller.employee.ssn" />
+    <input ng-model="controller.employee.hourlyWage" />
+    <input type="checkbox" ng-model="controller.employee.benefits" />
+    <input type="submit"/>
+</form>
+
+<div ng-hide="controller.edit">
+    <p>{{controller.employee.email}}</p>
+    <p>{{controller.employee.ssn}}</p>
+    <p>{{controller.employee.hourlyWage}}</p>
+    <button ng-click="controller.delete()">Delete</button>
+    <button ng-click="controller.edit = true">Edit</button>
+</div>
